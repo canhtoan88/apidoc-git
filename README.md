@@ -9,7 +9,10 @@
 ### user:
 
 ## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
+<<<<<<< HEAD
 + git status
+=======
+>>>>>>> b2bc00dbf6501738aacd3376081c9bfc9c026e86
 + (1) -> add -> (4) 
 + (2) -> modify -> (3)
 + (3) -> add -> (4)
