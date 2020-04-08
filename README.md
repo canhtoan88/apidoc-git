@@ -5,18 +5,34 @@
 ## Config: global - user
 ### global:
 + git config --global user.name "name"
-+ git congif --global user.email "email"
++ git config --global user.email "email"
 ### user:
 
-## Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
-### (1) -> add -> (4) 
-### (2) -> modify -> (3)
-### (3) -> add -> (4)
-### (4)-> commit -> (2)
+## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
++ git status
++ (1) -> add -> (4) 
++ (2) -> modify -> (3)
++ (3) -> add -> (4)
++ (4)-> commit -> (2)
 
 ## Ignore - Unstaged
-### Ignore: .gitignore
-### Unstaged: git restore --staged <file>
++ Ignore: .gitignore
++ Unstaged: git restore --staged <file>
+
+## Log
++ git log
++ git log -p -> shows the difference introduced in each commit
++ git log -2 -> Get 2 lasted commit
++ git log --stat -> show more info
++ git log --pretty=oneline -> just show git id and message
++ git log --since=2.weeks -> just show commit of lasted 2 weeks
+
+## Commit
+
+# How to escape the git commit
++ 1. Hit ESC.
++ 2. :w -> write the new commit into old commit
++ 3. :q -> quit the commit window
 
 a [Sails v1](https://sailsjs.com) application
 
