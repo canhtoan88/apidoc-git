@@ -18,7 +18,7 @@
 
 ## Ignore - Unstaged
 + Ignore: .gitignore
-+ Unstaged: git restore --staged fileName
++ Unstaged: **git restore --staged \<file\>**
 
 ## Log
 + **git log**
@@ -29,9 +29,9 @@
 + **git log --since=2.weeks** -> just show commit of lasted 2 weeks
 
 ## Commit
-+ *Unstaged*: **git reset HEAD <file>**
++ *Unstaged*: **git reset HEAD \<file\>**
 + *Addtitional added file after commited and before pushed*: **git commit --amend** -> merge multiple staging into one commit
-+ *Unmodified*: **git checkout -- fileName** -> remove modifying, come back to last commit
++ *Unmodified*: **git checkout -- \<file\>** -> remove modifying, come back to last commit
 
 
 # How to escape the git commit
@@ -40,15 +40,16 @@
 - 3. **:q** -> quit the commit window
 
 # Format for Github README.md
-* Font: **Bold**, __Bold2__, *Italic*, _Italic2_, ***Bold and Italic***, **Bold and _just italic in here_**
-* Quote: 
+1. Font: **Bold**, __Bold2__, *Italic*, _Italic2_, ***Bold and Italic***, **Bold and _just italic in here_**
+2. Quote: 
 ```
 This is a quote
 ```
-* [Link](https://github.com/canhtoan88/apidoc-git/blob/master/README.md)
-* Task lists: 
-[x] ticked
-[ ] not ticked
+3. [Link](https://github.com/canhtoan88/apidoc-git/blob/master/README.md)
+4. Task lists and Nested lists: 
+    - [x] ticked
+    - [ ] not ticked
+5. [Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/): :smile:
 
 a [Sails v1](https://sailsjs.com) application
 
