@@ -1,5 +1,23 @@
 # apidoc-git
 
+# Git command line
+
+## Config: global - user
+### global:
++ git config --global user.name "name"
++ git congif --global user.email "email"
+### user:
+
+## Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
+### (1) -> add -> (4) 
+### (2) -> modify -> (3)
+### (3) -> add -> (4)
+### (4)-> commit -> (2)
+
+## Ignore - Unstaged
+### Ignore: .gitignore
+### Unstaged: git restore --staged <file>
+
 a [Sails v1](https://sailsjs.com) application
 
 
