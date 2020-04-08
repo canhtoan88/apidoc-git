@@ -86,5 +86,8 @@ module.exports = {
      */
     postAPI: (req, res) => {
         return res.ok('Post API');
+    },
+    putAPI: (req, res) => {
+        return res.ok('Put API');
     }
 }
