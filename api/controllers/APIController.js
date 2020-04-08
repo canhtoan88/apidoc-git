@@ -89,5 +89,8 @@ module.exports = {
     },
     putAPI: (req, res) => {
         return res.ok('Put API');
+    },
+    deleteAPI: (req, res) => {
+        return res.ok('Delete API');
     }
 }
