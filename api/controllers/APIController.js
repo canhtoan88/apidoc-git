@@ -85,7 +85,7 @@ module.exports = {
      *     }
      */
     postAPI: (req, res) => {
-        const params = allParams();
+        const params = req.allParams();
         return res.ok({Page: 'Post API', ...params});
     },
     putAPI: (req, res) => {

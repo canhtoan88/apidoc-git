@@ -4,12 +4,13 @@
 
 ## Config: global - user
 ### global:
-+ git config --global user.name "name"
-+ git config --global user.email "email"
++ *git config --global user.name "name"*
++ *git config --global user.email "email"*
++ _Set default editor_: _git config core.editor="link-to-editor"_
 ### user:
 
 ## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
-+ git status
++ **git status**
 + (1) -> add -> (4) 
 + (2) -> modify -> (3)
 + (3) -> add -> (4)
@@ -17,25 +18,37 @@
 
 ## Ignore - Unstaged
 + Ignore: .gitignore
-+ Unstaged: git restore --staged <file>
++ Unstaged: git restore --staged fileName
 
 ## Log
-+ git log
-+ git log -p -> shows the difference introduced in each commit
-+ git log -2 -> Get 2 lasted commit
-+ git log --stat -> show more info
-+ git log --pretty=oneline -> just show git id and message
-+ git log --since=2.weeks -> just show commit of lasted 2 weeks
++ **git log**
++ **git log -p** -> shows the difference introduced in each commit
++ **git log -2** -> Get 2 lasted commit
++ **git log --stat** -> show more info
++ **git log --pretty=oneline** -> just show git id and message
++ **git log --since=2.weeks** -> just show commit of lasted 2 weeks
 
 ## Commit
-+ Unstaged: git reset HEAD <file>
-+ Addtitional added file after commited and before pushed: git commit --amend -> merge multiple staging into one commit
++ *Unstaged*: **git reset HEAD <file>**
++ *Addtitional added file after commited and before pushed*: **git commit --amend** -> merge multiple staging into one commit
++ *Unmodified*: **git checkout -- fileName** -> remove modifying, come back to last commit
 
 
 # How to escape the git commit
-+ 1. Hit ESC.
-+ 2. :w -> write the new commit into old commit
-+ 3. :q -> quit the commit window
+- 1. Hit **ESC**.
+- 2. **:w** -> write the new commit into old commit
+- 3. **:q** -> quit the commit window
+
+# Format for Github README.md
+* Font: **Bold**, __Bold2__, *Italic*, _Italic2_, ***Bold and Italic***, **Bold and _just italic in here_**
+* Quote: 
+```
+This is a quote
+```
+* [Link](https://github.com/canhtoan88/apidoc-git/blob/master/README.md)
+* Task lists: 
+[x] ticked
+[ ] not ticked
 
 a [Sails v1](https://sailsjs.com) application
 
