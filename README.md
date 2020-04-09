@@ -145,6 +145,10 @@ git branch --no-merged
 ```
 2. ***Show all branch on remote repository**
 ```javascript
+git branch -a
+```
+or more detail
+```javascript
 git remote show <remoteName>
 ```
 or
@@ -172,9 +176,71 @@ git push --set-upstream origin <branchName>
 ```javascript
 git branch -d <brandName> -use -D if branch not merged yet
 ```
-8. _Tracking a branch on remote repository_
+or remove branch after pushed
 ```javascript
-git checkout -b <branchNameOnRemote>
+git push <remoteName> --delete <branchName>
+```
+8. _Tracking a branch on remote repository_
+- _From the local branch_
+```javascript
+git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - currentBranchName in local
+```
+- _From the remote branch_
+```javascript
+git fetch
+```
+
+## Stashing
+1. _Stash_ :point_right: save changed in working directory at current branch
+```javascript
+git stash
+```
+and for index:
+```javascript
+git stash --index
+```
+2. _Get stash list_
+```javascript
+git stash list
+```
+or:
+```javascript
+git stash list --stat
+```
+3. _Apply stash_
+- Don't specify any stash :point_right: apply last stash
+```javascript
+git stash apply
+```
+- Specify stash
+```javascript
+git stash apply stash@{<stt>}
+```
+* **Apply and drop stash**
+```javascript
+git stash pop - apply for the last stash
+```
+* **Apply and keep index if stash after commited**
+```javascript
+git stash apply --index
+```
+4. _Delete stash_
+```javascript
+git stash drop - drop the first stash
+```
+or
+```javascript
+git stash drop stash@{stt}
+```
+* **Clear stash**
+```javascript
+git stash clear
+```
+
+## Cleaning 
+### :point_right: Remove untracked file
+```javascript
+git clean -f
 ```
 
 ## Tagging
