@@ -16,9 +16,10 @@
 + (3) -> add -> (4)
 + (4)-> commit -> (2)
 
-## Ignore - Unstaged
+## Ignore - Unstaged - Unmodified
 + Ignore: .gitignore
 + Unstaged: **git restore --staged \<file\>**
++ Unmodified: **git restore \<file\>**
 
 ## Log
 + **git log**
@@ -45,11 +46,10 @@
 ```
 This is a quote
 ```
-3. [Link](https://github.com/canhtoan88/apidoc-git/blob/master/README.md)
+3. [Emoji and Link](https://www.webfx.com/tools/emoji-cheat-sheet/): :smile:
 4. Task lists and Nested lists: 
     - [x] ticked
     - [ ] not ticked
-5. [Emoji](https://www.webfx.com/tools/emoji-cheat-sheet/): :smile:
 
 a [Sails v1](https://sailsjs.com) application
 
