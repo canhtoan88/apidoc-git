@@ -189,7 +189,21 @@ git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - curre
 ```javascript
 git fetch
 ```
-9. 
+9. **_Rebase_**: _merge after branch master HEAD_
+```javascript
+git checkout <brandName> - if branch dev at here
+git add .
+git commit -m "message"
+git rebase master
+git checkout master
+git merge <branchName> - so branch dev also at here
+```
+_If conflict occurs:_
+```javascript
+resolve conflict and use --continue option
+git add .
+git rebase --continue
+```
 
 ## Tagging
 1. **Lightweight tag** :point_right: _common use for local_
