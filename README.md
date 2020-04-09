@@ -147,10 +147,6 @@ git tag
 ```javascript
 git show <tagName>
 ```
-+ *Show detail tags*:
-```javascript
-git tag --decorate
-```
 + *Show tagName and message*:
 ```javascript
 git tag -n
