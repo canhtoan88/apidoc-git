@@ -66,7 +66,7 @@ git log --since=2.weeks
 ```javascript
 git checkout -- <file>
 ```
-+ *Unstaged*:
++ *Unstaged* :point_right: remove staged, come back to last index
 ```javascript
 git reset HEAD <file>
 ```
@@ -86,9 +86,13 @@ git commit --amend --no-edit
 ## Committed
 + *Uncommited*:
     * Not pushed yet:
-        - Hard :point_right: come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
+        - Hard :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and remove changed in working directory (local).
         ```javascript
         git reset --hard HEAD~n -> n can a number or nothing (default is 1)
+        ```
+        - Mixed :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and don't remove changed in working directory (local).
+        ```javascript
+        git reset --mixed HEAD~n -> n can a number or nothing (default is 1)
         ```
         - Soft :point_right: come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
         ```javascript
@@ -197,12 +201,14 @@ git commit -m "message"
 git rebase master
 git checkout master
 git merge <branchName> - so branch dev also at here
+git push
 ```
 _If conflict occurs:_
 ```javascript
 resolve conflict and use --continue option
 git add .
 git rebase --continue
+git checkout master
 ```
 
 ## Tagging
