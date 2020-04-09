@@ -149,7 +149,9 @@ git branch --no-merged
 ```
 2. ***Show all branch on remote repository**
 ```javascript
-git branch -a
+git branch -a - branch local and branch remote
+git branch -l - only branch local
+git branch -r - only branch remote
 ```
 or more detail
 ```javascript
@@ -191,7 +193,8 @@ git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - curre
 ```
 - _From the remote branch_
 ```javascript
-git fetch
+git checkout --track <remoteName>/<branchName>
+git co --track origin/dev
 ```
 9. **_Rebase_**: _merge after branch master HEAD_
 ```javascript
