@@ -21,8 +21,8 @@
 ## Ignore - Unstaged - Unmodified
 ```javascript
 + Ignore: .gitignore
-+ Unmodified: **git restore \<file\>**
-+ Unstaged: **git restore --staged \<file\>**
++ Unmodified: **git restore <file>**
++ Unstaged: **git restore --staged <file>**
 ```
 
 ## Log
@@ -64,28 +64,121 @@ git reset HEAD <file>
 ```javascript
 git commit --amend
 ```
-    - *Change commit message* :arrow_right: change message then write (:w) and quit (:q)
-    ```javascript
-    git commit --amend
-    ```
-    - *Don't change commit message*:
-    ```javascript
-    git commit --amend --no-edit
-    ```
+- *Change commit message* :arrow_right: change message then write (:w) and quit (:q)
+```javascript
+git commit --amend
+```
+- *Don't change commit message*:
+```javascript
+git commit --amend --no-edit
+```
 
 ## Committed
 + *Uncommited*:
     * Not pushed yet:
-        - Hard: **git reset --hard HEAD~n** - _n can a number or nothing (default is 1)_ -> come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
-        - Soft: **git reset --soft HEAD~n** - _n can a number or nothing (default is 1)_ -> come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
-    * Pushed: **git revert \<commit_hash\>**
+        - Hard :point_right: come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
+        ```javascript
+        git reset --hard HEAD~n** -> n can a number or nothing (default is 1)
+        ```
+        - Soft :point_right: come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
+        ```javascript
+        git reset --soft HEAD~n -> n can a number or nothing (default is 1)
+        ```
+    * Pushed: 
+    ```javascript
+    git revert <commit_hash>
+    ```
 + *Incorrect branch*: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
 
 ## Remote
-+ *Remote a new respository*: **git remote add \<remoteName\(common is origin\)\> \<url\>**
-+ *Show remote*: **git remote** or **git remote -v** or **git remote show**
-+ *Rename remote*: **git remote rename \<oldName\> \<newName\>**
-+ *Remove remote*: **git remote rm \<remoteName\>**
++ *Remote a new respository*: 
+```javascript
+git remote add <remoteName(common is origin)> <url>
+```
++ *Show remote*: 
+```javascript
+git remote
+```
+or:
+```javascript
+git remote -v
+```
+or:
+```javascript
+git remote show**
+```
++ *Rename remote*: 
+```javascript
+git remote rename <oldName> <newName>
+```
++ *Remove remote*: 
+```javascript
+git remote rm <remoteName>
+```
+
+## Tagging
+1. **Lightweight tag** :point_right: _common use for local_
+- *Add lightweight tag*:
+```javascript
+git tag <tagName>
+```
+2. **Annotated tag** :point_right: _common use for remote repository_
+- *Add new tag without message*
+```javascript
+git tag -a <tagName>
+```
+- *Add new tag with message*
+```javascript
+git tag -am "message" <tagName>
+```
+or:
+```javascript
+git tag -a <tagName> -m "message"
+```
+* _Add new tag for specify commit_
+```javascript
+git tag -a <tagName> -m "message" <commit_hash>
+```
++ *Listing togs*:
+```javascript
+git tag
+```
++ _Show a tag_:
+```javascript
+git show <tagName>
+```
++ *Show detail tags*:
+```javascript
+git tag --decorate
+```
++ *Show tagName and message*:
+```javascript
+git tag -n
+```
++ *Remove tag on local*
+```javascript
+git tag -d <tagName>
+```
++ *Remove tag on remote repository*
+```javascript
+git push <remoteName> --delete <tagName>
+```
++ _Pushing tag_
+```javascript
+git push <remoteName> <tagName>
+```
+or push every tag:
+```javascript
+git push <remoteName> --tags
+```
++ *Switch and checkout a tag for different branch*
+```javascript
+git checkout -b <newBranchName> <tagName>
+```
+
+
+```javascript
+```
 
 # How to escape the git commit
 - 1. Hit **ESC**.
