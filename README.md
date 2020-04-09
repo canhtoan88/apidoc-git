@@ -19,24 +19,59 @@
 ```
 
 ## Ignore - Unstaged - Unmodified
+```javascript
 + Ignore: .gitignore
 + Unmodified: **git restore \<file\>**
 + Unstaged: **git restore --staged \<file\>**
+```
 
 ## Log
-+ **git log**
-+ **git log -p** -> shows the difference introduced in each commit
-+ **git log -2** -> Get 2 lasted commit
-+ **git log --stat** -> show more info
-+ **git log --pretty=oneline** -> just show git id and message
-+ **git log --since=2.weeks** -> just show commit of lasted 2 weeks
++ Show basic info
+```javascript
+git log
+```
++ Shows the difference introduced in each commit
+```javascript
+git log -p
+```
++ Get 2 lasted commit
+```javascript
+git log -2
+```
++ Show more info
+```javascript
+git log --stat
+```
++ Only show git id and message
+```javascript
+git log --pretty=oneline
+```
++ Only show commit of lasted 2 weeks
+```javascript
+git log --since=2.weeks
+```
 
 ## Committing
-+ *Unmodified*: **git checkout -- \<file\>** -> remove modifying, come back to last commit
-+ *Unstaged*: **git reset HEAD \<file\>**
-+ *Addtitional added file after commited and before pushed*: **git commit --amend** -> merge multiple staging into one commit
-    - *Change commit message*: **git commit --amend** :arrow_right: change message then write (:w) and quit (:q)
-    - *Don't change commit message*: **git commit --amend --no-edit**
++ *Unmodified* :point_right: remove modifying, come back to last commit
+```javascript
+git checkout -- <file>
+```
++ *Unstaged*:
+```javascript
+git reset HEAD <file>
+```
++ *Addtitional added file after commited and before pushed* :point_right: merge multiple staging into one commit
+```javascript
+git commit --amend
+```
+    - *Change commit message* :arrow_right: change message then write (:w) and quit (:q)
+    ```javascript
+    git commit --amend
+    ```
+    - *Don't change commit message*:
+    ```javascript
+    git commit --amend --no-edit
+    ```
 
 ## Committed
 + *Uncommited*:
