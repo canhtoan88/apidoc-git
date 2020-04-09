@@ -145,6 +145,10 @@ git branch --no-merged
 ```
 2. ***Show all branch on remote repository**
 ```javascript
+git branch -a
+```
+or more detail
+```javascript
 git remote show <remoteName>
 ```
 or
@@ -172,9 +176,18 @@ git push --set-upstream origin <branchName>
 ```javascript
 git branch -d <brandName> -use -D if branch not merged yet
 ```
-8. _Tracking a branch on remote repository_
+or remove branch after pushed
 ```javascript
-git checkout -b <branchNameOnRemote>
+git push <remoteName> --delete <branchName>
+```
+8. _Tracking a branch on remote repository_
+- _From the local branch_
+```javascript
+git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - currentBranchName in local
+```
+- _From the remote branch_
+```javascript
+git fetch
 ```
 
 ## Tagging
