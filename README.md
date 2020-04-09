@@ -189,6 +189,7 @@ git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - curre
 ```javascript
 git fetch
 ```
+9. 
 
 ## Tagging
 1. **Lightweight tag** :point_right: _common use for local_
