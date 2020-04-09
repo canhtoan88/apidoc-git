@@ -11,11 +11,11 @@ git config --global user.email "email"
 ```
 + _Set default editor_: 
 ```javascript
-git config core.editor="link-to-editor"
+git config --global core.editor="link-to-editor"
 ```
 + _Set alias_
 ```javascript
-git config alias.key value
+git config --global alias.key value (or 'value')
 ```
 ### user:
 
@@ -126,6 +126,40 @@ git remote rename <oldName> <newName>
 git remote rm <remoteName>
 ```
 
+## Branch
+1. *Create new branch*
+```javascript
+git branch <branchName>
+```
+2. _Show full branch_
+```javascript
+git branch
+```
+3. _Switch branch_
+```javascript
+git checkout <branchName>
+```
+4. _Create and Switch branch in one line_
+```javascript
+git checkout -b <branchName>
+```
+5. _Merge_
+```javascript
+git branch master
+git merge <branchName>
+```
+6. _Public branch on remote repository_
+```javascript
+git push --set-upstream origin <branchName>
+```
+7. _Delete branch_
+```javascript
+git branch -d <brandName>
+```
+```javascript
+
+```
+
 ## Tagging
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
@@ -184,10 +218,6 @@ git push <remoteName> --tags
 + *Switch and checkout a tag for different branch*
 ```javascript
 git checkout -b <newBranchName> <tagName>
-```
-
-
-```javascript
 ```
 
 # How to escape the git commit
