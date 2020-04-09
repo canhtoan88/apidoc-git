@@ -88,7 +88,7 @@ git commit --amend --no-edit
     * Not pushed yet:
         - Hard :point_right: come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
         ```javascript
-        git reset --hard HEAD~n** -> n can a number or nothing (default is 1)
+        git reset --hard HEAD~n -> n can a number or nothing (default is 1)
         ```
         - Soft :point_right: come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
         ```javascript
@@ -115,7 +115,7 @@ git remote -v
 ```
 or:
 ```javascript
-git remote show**
+git remote show
 ```
 + *Rename remote*: 
 ```javascript
@@ -134,6 +134,22 @@ git branch <branchName>
 2. _Show full branch_
 ```javascript
 git branch
+```
+- _Show branch merged_
+```javascript
+git branch --merged
+```
+- _Show branch not merged yet_
+```javascript
+git branch --no-merged
+```
+2. ***Show all branch on remote repository**
+```javascript
+git remote show <remoteName>
+```
+or
+```javascript
+git ls-remote <remoteName>
 ```
 3. _Switch branch_
 ```javascript
@@ -154,8 +170,9 @@ git push --set-upstream origin <branchName>
 ```
 7. _Delete branch_
 ```javascript
-git branch -d <brandName>
+git branch -d <brandName> -use -D if branch not merged yet
 ```
+8. 
 ```javascript
 
 ```
@@ -164,7 +181,7 @@ git branch -d <brandName>
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
 ```javascript
-git tag <tagName> -- set tag message as commit message
+git tag <tagName> - set tag message as commit message
 ```
 2. **Annotated tag** :point_right: _common use for remote repository_
 - *Add new tag without message*
@@ -220,7 +237,7 @@ git push <remoteName> --tags
 git checkout -b <newBranchName> <tagName>
 ```
 
-# How to escape the git commit
+# How to escape the git commit console screen
 - 1. Hit **ESC**.
 - 2. **:w** -> write the new commit into old commit
 - 3. **:q** -> quit the commit window
