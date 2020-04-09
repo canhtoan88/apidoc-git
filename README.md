@@ -11,15 +11,17 @@
 
 ## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
 + **git status**
+```javascript
 + (1) -> add -> (4) 
 + (2) -> modify -> (3)
 + (3) -> add -> (4)
 + (4)-> commit -> (2)
+```
 
 ## Ignore - Unstaged - Unmodified
 + Ignore: .gitignore
-+ Unstaged: **git restore --staged \<file\>**
 + Unmodified: **git restore \<file\>**
++ Unstaged: **git restore --staged \<file\>**
 
 ## Log
 + **git log**
@@ -29,11 +31,26 @@
 + **git log --pretty=oneline** -> just show git id and message
 + **git log --since=2.weeks** -> just show commit of lasted 2 weeks
 
-## Commit
+## Committing
++ *Unmodified*: **git checkout -- \<file\>** -> remove modifying, come back to last commit
 + *Unstaged*: **git reset HEAD \<file\>**
 + *Addtitional added file after commited and before pushed*: **git commit --amend** -> merge multiple staging into one commit
-+ *Unmodified*: **git checkout -- \<file\>** -> remove modifying, come back to last commit
+    - *Change commit message*: **git commit --amend** :arrow_right: change message then write (:w) and quit (:q)
+    - *Don't change commit message*: **git commit --amend --no-edit**
 
+## Committed
++ *Uncommited*:
+    * Not pushed yet:
+        - Hard: **git reset --hard HEAD~n** - _n can a number or nothing (default is 1)_ -> come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
+        - Soft: **git reset --soft HEAD~n** - _n can a number or nothing (default is 1)_ -> come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
+    * Pushed: **git revert \<commit_hash\>**
++ *Incorrect branch*: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
+
+## Remote
++ *Remote a new respository*: **git remote add \<remoteName\(common is origin\)\> \<url\>**
++ *Show remote*: **git remote** or **git remote -v** or **git remote show**
++ *Rename remote*: **git remote rename \<oldName\> \<newName\>**
++ *Remove remote*: **git remote rm \<remoteName\>**
 
 # How to escape the git commit
 - 1. Hit **ESC**.
