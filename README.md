@@ -172,9 +172,9 @@ git push --set-upstream origin <branchName>
 ```javascript
 git branch -d <brandName> -use -D if branch not merged yet
 ```
-8. 
+8. _Tracking a branch on remote repository_
 ```javascript
-
+git checkout -b <branchNameOnRemote>
 ```
 
 ## Tagging
