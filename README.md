@@ -4,9 +4,19 @@
 
 ## Config: global - user
 ### global:
-+ *git config --global user.name "name"*
-+ *git config --global user.email "email"*
-+ _Set default editor_: _git config core.editor="link-to-editor"_
++ _Set user profile_:
+```javascript
+git config --global user.name "name"
+git config --global user.email "email"
+```
++ _Set default editor_: 
+```javascript
+git config core.editor="link-to-editor"
+```
++ _Set alias_
+```javascript
+git config alias.key value
+```
 ### user:
 
 ## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
@@ -120,12 +130,12 @@ git remote rm <remoteName>
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
 ```javascript
-git tag <tagName>
+git tag <tagName> -- set tag message as commit message
 ```
 2. **Annotated tag** :point_right: _common use for remote repository_
 - *Add new tag without message*
 ```javascript
-git tag -a <tagName>
+git tag -a <tagName> -- set tag message as commit message
 ```
 - *Add new tag with message*
 ```javascript
@@ -143,6 +153,10 @@ git tag -a <tagName> -m "message" <commit_hash>
 ```javascript
 git tag
 ```
++ _Listing tags from remote repository_
+```javascript
+git ls-remote --tag - If do not contain --tag, it will listing more info such as HEAD, Branch and Tag
+```
 + _Show a tag_:
 ```javascript
 git show <tagName>
@@ -159,7 +173,7 @@ git tag -d <tagName>
 ```javascript
 git push <remoteName> --delete <tagName>
 ```
-+ _Pushing tag_
++ _Release_ :point_right: _Pushing tag_
 ```javascript
 git push <remoteName> <tagName>
 ```
