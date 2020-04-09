@@ -88,7 +88,7 @@ git commit --amend --no-edit
     * Not pushed yet:
         - Hard :point_right: come back n commit before, move HEAD to n commit before and remove changed in working directory (local).
         ```javascript
-        git reset --hard HEAD~n** -> n can a number or nothing (default is 1)
+        git reset --hard HEAD~n -> n can a number or nothing (default is 1)
         ```
         - Soft :point_right: come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
         ```javascript
@@ -156,6 +156,7 @@ git push --set-upstream origin <branchName>
 ```javascript
 git branch -d <brandName>
 ```
+8. 
 ```javascript
 
 ```
@@ -220,7 +221,7 @@ git push <remoteName> --tags
 git checkout -b <newBranchName> <tagName>
 ```
 
-# How to escape the git commit
+# How to escape the git commit console screen
 - 1. Hit **ESC**.
 - 2. **:w** -> write the new commit into old commit
 - 3. **:q** -> quit the commit window
