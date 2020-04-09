@@ -115,7 +115,7 @@ git remote -v
 ```
 or:
 ```javascript
-git remote show**
+git remote show
 ```
 + *Rename remote*: 
 ```javascript
@@ -134,6 +134,22 @@ git branch <branchName>
 2. _Show full branch_
 ```javascript
 git branch
+```
+- _Show branch merged_
+```javascript
+git branch --merged
+```
+- _Show branch not merged yet_
+```javascript
+git branch --no-merged
+```
+2. ***Show all branch on remote repository**
+```javascript
+git remote show <remoteName>
+```
+or
+```javascript
+git ls-remote <remoteName>
 ```
 3. _Switch branch_
 ```javascript
@@ -154,7 +170,7 @@ git push --set-upstream origin <branchName>
 ```
 7. _Delete branch_
 ```javascript
-git branch -d <brandName>
+git branch -d <brandName> -use -D if branch not merged yet
 ```
 8. 
 ```javascript
@@ -165,7 +181,7 @@ git branch -d <brandName>
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
 ```javascript
-git tag <tagName> -- set tag message as commit message
+git tag <tagName> - set tag message as commit message
 ```
 2. **Annotated tag** :point_right: _common use for remote repository_
 - *Add new tag without message*
