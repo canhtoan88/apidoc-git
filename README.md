@@ -211,6 +211,59 @@ git rebase --continue
 git checkout master
 ```
 
+## Stashing
+1. _Stash_ :point_right: save changed in working directory at current branch
+```javascript
+git stash
+```
+and for index:
+```javascript
+git stash --index
+```
+2. _Get stash list_
+```javascript
+git stash list
+```
+or:
+```javascript
+git stash list --stat
+```
+3. _Apply stash_
+- Don't specify any stash :point_right: apply last stash
+```javascript
+git stash apply
+```
+- Specify stash
+```javascript
+git stash apply stash@{<stt>}
+```
+* **Apply and drop stash**
+```javascript
+git stash pop - apply for the last stash
+```
+* **Apply and keep index if stash after commited**
+```javascript
+git stash apply --index
+```
+4. _Delete stash_
+```javascript
+git stash drop - drop the first stash
+```
+or
+```javascript
+git stash drop stash@{stt}
+```
+* **Clear stash**
+```javascript
+git stash clear
+```
+
+## Cleaning 
+### :point_right: Remove untracked file
+```javascript
+git clean -f
+```
+
 ## Tagging
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
