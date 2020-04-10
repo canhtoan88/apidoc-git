@@ -193,6 +193,11 @@ git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - curre
 ```
 - _From the remote branch_
 ```javascript
+git fetch - fetch all branch and remote from remote repository
+git checkout <branchName>
+```
+or:
+```javascript
 git checkout --track <remoteName>/<branchName>
 git co --track origin/dev
 ```
