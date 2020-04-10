@@ -271,7 +271,7 @@ git clean -f
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
 ```javascript
-git tag <tagName> - set tag message as commit message
+git tag <tagName> - set tag message same commit message
 ```
 2. **Annotated tag** :point_right: _common use for remote repository_
 - *Add new tag without message*
@@ -290,13 +290,14 @@ git tag -a <tagName> -m "message"
 ```javascript
 git tag -a <tagName> -m "message" <commit_hash>
 ```
+3. *Working with tag*
 + *Listing togs*:
 ```javascript
 git tag
 ```
 + _Listing tags from remote repository_
 ```javascript
-git ls-remote --tag - If do not contain --tag, it will listing more info such as HEAD, Branch and Tag
+git ls-remote -t/--tag - If do not contain --tag, it will listing more info such as HEAD, Branch and Tag
 ```
 + _Show a tag_:
 ```javascript
@@ -306,14 +307,6 @@ git show <tagName>
 ```javascript
 git tag -n
 ```
-+ *Remove tag on local*
-```javascript
-git tag -d <tagName>
-```
-+ *Remove tag on remote repository*
-```javascript
-git push <remoteName> --delete <tagName>
-```
 + _Release_ :point_right: _Pushing tag_
 ```javascript
 git push <remoteName> <tagName>
@@ -321,6 +314,14 @@ git push <remoteName> <tagName>
 or push every tag:
 ```javascript
 git push <remoteName> --tags
+```
++ *Remove tag on local*
+```javascript
+git tag -d <tagName>
+```
++ *Remove tag on remote repository*
+```javascript
+git push <remoteName> --delete <tagName>
 ```
 + *Switch and checkout a tag for different branch*
 ```javascript
