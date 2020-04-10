@@ -2,7 +2,7 @@
 
 # Git command line
 
-## Config: global - user
+## I. Config: global - user
 ### global:
 + _Set user profile_:
 ```javascript
@@ -19,7 +19,7 @@ git config --global alias.key value (or 'value')
 ```
 ### user:
 
-## States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
+## II. States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
 + **git status**
 ```javascript
 + (1) -> add -> (4) 
@@ -28,7 +28,7 @@ git config --global alias.key value (or 'value')
 + (4)-> commit -> (2)
 ```
 
-## Ignore - Unstaged - Unmodified
+## III. Ignore - Unstaged - Unmodified
 ```javascript
 + Ignore: .gitignore
 + Unmodified: **git restore <file>**
@@ -61,7 +61,7 @@ git log --pretty=oneline
 git log --since=2.weeks
 ```
 
-## Committing
+## IV. Committing
 + *Unmodified* :point_right: remove modifying, come back to last commit
 ```javascript
 git checkout -- <file>
@@ -83,7 +83,7 @@ git commit --amend
 git commit --amend --no-edit
 ```
 
-## Committed
+## V. Committed
 + *Uncommited*:
     * Not pushed yet:
         - Hard :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and remove changed in working directory (local).
@@ -108,7 +108,7 @@ git reset --hard ORIG_HEAD
 ```
 + *Incorrect branch*: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
 
-## Remote
+## VI. Remote
 + *Remote a new respository*: 
 ```javascript
 git remote add <remoteName(common is origin)> <url>
@@ -134,12 +134,12 @@ git remote rename <oldName> <newName>
 git remote rm <remoteName>
 ```
 
-## Branch
-1. *Create new branch*
+## VII. Branch
+1. **Create new branch**
 ```javascript
 git branch <branchName>
 ```
-2. _Show full branch_
+2. __Show full branch__
 ```javascript
 git branch
 ```
@@ -151,7 +151,7 @@ git branch --merged
 ```javascript
 git branch --no-merged
 ```
-2. ***Show all branch on remote repository**
+2. **Show all branch on remote repository*
 ```javascript
 git branch -a - branch local and branch remote
 git branch -l - only branch local
@@ -165,28 +165,33 @@ or
 ```javascript
 git ls-remote <remoteName>
 ```
-3. _Switch branch_
+3. __Switch branch__
 ```javascript
 git checkout <branchName>
 ```
-4. _Create and Switch branch in one line_
+4. __Create and Switch branch in one line__
 ```javascript
 git checkout -b <branchName>
 ```
-5. _Merge_
+5. __Merge__
 ```javascript
 git branch master
 git merge <branchName>
 ```
-6. _Public branch on remote repository_
+6. __Public branch on remote repository__
 ```javascript
 git push --set-upstream origin <branchName>
 ```
-7. _Delete branch_
+7. __Delete branch__
+- _Delete local branch_
 ```javascript
 git branch -d <brandName> -use -D if branch not merged yet
 ```
-or remove branch after pushed
+- _Delete remote branch_
+```javascript
+git push origin -d/--delete <brandName>
+```
+or delete branch after pushed
 ```javascript
 git push <remoteName> -d/--delete <branchName>
 ```
@@ -194,17 +199,17 @@ If want to recover branch:
 ```javascript
 git branch <branchName> <commit_hash> - only local
 ```
-8. _Tracking a branch on remote repository_
+8. __Tracking a branch on remote repository__
 - _From the local branch_
 ```javascript
 git branch --set-upstream-to=<remoteName>/<branchName> <currentBranchName> - currentBranchName in local
 ```
-- _From the remote branch_
+- __From the remote branch__
 ```javascript
 git checkout --track <remoteName>/<branchName>
 git co --track origin/dev
 ```
-9. **_Rebase_**: _merge after branch master HEAD_
+9. **Rebase**: _merge after branch master HEAD_
 ```javascript
 git checkout <brandName> - if branch dev at here
 git add .
@@ -222,12 +227,12 @@ git rebase --continue
 git checkout master
 ```
 
-## Stashing
-1. _Stash_ :point_right: save changed in working directory at current branch
+## VIII. Stashing
+1. __Stash__ :point_right: save changed in working directory at current branch
 ```javascript
 git stash
 ```
-2. _Get stash list_
+2. __Get stash list__
 ```javascript
 git stash list
 ```
@@ -235,7 +240,7 @@ or:
 ```javascript
 git stash list --stat
 ```
-3. _Apply stash_
+3. __Apply stash__
 - Don't specify any stash :point_right: apply last stash
 ```javascript
 git stash apply
@@ -252,7 +257,7 @@ git stash pop - apply for the last stash
 ```javascript
 git stash apply --index
 ```
-4. _Delete stash_
+4. __Delete stash__
 ```javascript
 git stash drop - drop the first stash
 ```
@@ -265,13 +270,13 @@ git stash drop stash@{stt}
 git stash clear
 ```
 
-## Cleaning 
+## IX. Cleaning 
 ### :point_right: Remove untracked file
 ```javascript
 git clean -f
 ```
 
-## Tagging
+## X. Tagging
 1. **Lightweight tag** :point_right: _common use for local_
 - *Add lightweight tag*:
 ```javascript
