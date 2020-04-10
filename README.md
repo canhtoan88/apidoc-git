@@ -36,41 +36,41 @@ git config --global alias.key value (or 'value')
 ```
 
 ## Log
-+ Show basic info
++ **Show basic info**
 ```javascript
 git log
 ```
-+ Shows the difference introduced in each commit
++ **Shows the difference introduced in each commit**
 ```javascript
 git log -p
 ```
-+ Get 2 lasted commit
++ **Get 2 lasted commit**
 ```javascript
 git log -2
 ```
-+ Show more info
++ **Show more info**
 ```javascript
 git log --stat
 ```
-+ Only show git id and message
++ **Only show git id and message**
 ```javascript
 git log --pretty=oneline
 ```
-+ Only show commit of lasted 2 weeks
++ **Only show commit of lasted 2 weeks**
 ```javascript
 git log --since=2.weeks
 ```
 
 ## IV. Committing
-+ *Unmodified* :point_right: remove modifying, come back to last commit
++ **Unmodified** :point_right: remove modifying, come back to last commit
 ```javascript
 git checkout -- <file>
 ```
-+ *Unstaged* :point_right: remove staged, come back to last index
++ **Unstaged** :point_right: remove staged, come back to last index
 ```javascript
 git reset HEAD <file>
 ```
-+ *Addtitional added file after commited and before pushed* :point_right: merge multiple staging into one commit
++ **Addtitional added file after commited and before pushed** :point_right: merge multiple staging into one commit
 ```javascript
 git commit --amend
 ```
@@ -84,7 +84,7 @@ git commit --amend --no-edit
 ```
 
 ## V. Committed
-+ *Uncommited*:
++ **Uncommited**:
     * Not pushed yet:
         - Hard :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and remove changed in working directory (local).
         ```javascript
@@ -102,18 +102,18 @@ git commit --amend --no-edit
     ```javascript
     git revert <commit_hash>
     ```
-+ Unpull :point_right: common for conflict case
++ **Unpull** :point_right: common for conflict case
 ```javascript
 git reset --hard ORIG_HEAD
 ```
-+ *Incorrect branch*: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
++ **Incorrect branch**: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
 
 ## VI. Remote
-+ *Remote a new respository*: 
++ **Remote a new respository**: 
 ```javascript
 git remote add <remoteName(common is origin)> <url>
 ```
-+ *Show remote*: 
++ **Show remote**: 
 ```javascript
 git remote
 ```
@@ -125,11 +125,11 @@ or:
 ```javascript
 git remote show
 ```
-+ *Rename remote*: 
++ **Rename remote**: 
 ```javascript
 git remote rename <oldName> <newName>
 ```
-+ *Remove remote*: 
++ **Remove remote**: 
 ```javascript
 git remote rm <remoteName>
 ```
@@ -299,7 +299,7 @@ git tag -a <tagName> -m "message"
 ```javascript
 git tag -a <tagName> -m "message" <commit_hash>
 ```
-3. *Working with tag*
+3. **_Working with tag_**
 + *Listing togs*:
 ```javascript
 git tag
