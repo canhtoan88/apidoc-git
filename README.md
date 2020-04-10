@@ -102,6 +102,10 @@ git commit --amend --no-edit
     ```javascript
     git revert <commit_hash>
     ```
++ Unpull :point_right: common for conflict case
+```javascript
+git reset --hard ORIG_HEAD
+```
 + *Incorrect branch*: Uncommited :arrow_right: **git branch \<branchName\>** :arrow_right: re-commit
 
 ## Remote
@@ -184,12 +188,16 @@ git branch -d <brandName> -use -D if branch not merged yet
 ```
 or remove branch after pushed
 ```javascript
-git push <remoteName> --delete <branchName>
+git push <remoteName> -d/--delete <branchName>
+```
+If want to recover branch:
+```javascript
+git branch <branchName> <commit_hash> - only local
 ```
 8. _Tracking a branch on remote repository_
 - _From the local branch_
 ```javascript
-git branch --set-upstream-to=<remoteName>/<branchName> currentBranchName - currentBranchName in local
+git branch --set-upstream-to=<remoteName>/<branchName> <currentBranchName> - currentBranchName in local
 ```
 - _From the remote branch_
 ```javascript
@@ -218,10 +226,6 @@ git checkout master
 1. _Stash_ :point_right: save changed in working directory at current branch
 ```javascript
 git stash
-```
-and for index:
-```javascript
-git stash --index
 ```
 2. _Get stash list_
 ```javascript
@@ -321,7 +325,7 @@ git tag -d <tagName>
 ```
 + *Remove tag on remote repository*
 ```javascript
-git push <remoteName> --delete <tagName>
+git push <remoteName> -d/--delete <tagName>
 ```
 + *Switch and checkout a tag for different branch*
 ```javascript
