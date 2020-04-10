@@ -206,8 +206,11 @@ git branch --set-upstream-to=<remoteName>/<branchName> <currentBranchName> - cur
 ```
 - __From the remote branch__
 ```javascript
+git fetch
+git checkout <branchName>
+```
+```javascript
 git checkout --track <remoteName>/<branchName>
-git co --track origin/dev
 ```
 9. **Rebase**: _merge after branch master HEAD_
 ```javascript
