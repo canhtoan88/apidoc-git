@@ -1,7 +1,6 @@
 module.exports = {
     /**
      * @api {get} /api 01. Get API page
-     * @apiSampleRequest off
      * @apiVersion 1.0.1
      * @apiName GetAPI
      * @apiGroup API

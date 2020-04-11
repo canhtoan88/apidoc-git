@@ -32,6 +32,9 @@ const UserController = {
         @apiErrorExample Error-Response
         HTTP/1.1 400 error
         {
+            "Error": "Token is required"
+        }
+        {
             "Error": "Token invalid"
         }
         @apiErrorExample Error-Response
