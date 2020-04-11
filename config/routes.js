@@ -19,8 +19,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  /* ===================================== API ================================= */
   '/': { view: 'pages/homepage' },
-  'GET /api' : 'APIController.getAPI'
+  'GET /api/api'    : 'APIController.getAPI',
+  'POST /api/api'   : 'APIController.postAPI',
+  'PUT /api/api'    : 'APIController.putAPI',
+  'DELETE /api/api' : 'APIController.deleteAPI',
+
+  /* ===================================== USER ================================= */
+  'GET /api/user'      : 'UserController.getUsers',
+  'POST /api/user'     : 'UserController.postUser',
+  'PUT /api/user'      : 'UserController.putUser',
+  'DELETE /api/user'   : 'UserController.DeleteUser',
 
 
   /***************************************************************************
