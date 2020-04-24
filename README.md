@@ -31,8 +31,8 @@ git config --global alias.key value (or 'value')
 ## III. Ignore - Unstaged - Unmodified
 ```javascript
 + Ignore: .gitignore
-+ Unmodified: git restore <file>
-+ Unstaged: git restore --staged <file>
++ Unmodified: **git restore <file>**
++ Unstaged: **git restore --staged <file>**
 ```
 
 ## Log
