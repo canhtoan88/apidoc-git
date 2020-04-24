@@ -356,5 +356,3 @@ This is a quote
     - [ ] not ticked
 
 # apidoc-git
-
-# Before convert
