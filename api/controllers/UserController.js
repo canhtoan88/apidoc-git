@@ -46,11 +46,11 @@ const UserController = {
     getUsers: (req, res) => {
         const token = req.headers.token;
         if (!token)
-            return res.badRequest({Error: 'token is required'});
+        {return res.badRequest({Error: 'token is required'});}
         return res.ok({
             code: 200,
             message: 'ok',
-            data: sails.config.custom.users.map(value => {return {fullname: value.fullname, username: value.username}})
+            data: sails.config.custom.users.map(value => {return {fullname: value.fullname, username: value.username};})
         });
     },
     /**
@@ -82,7 +82,7 @@ const UserController = {
             "fullname": "Nguyen Canh Toan",
             "username": "canhtoan88"
         }
-        
+
         @apiErrorExample Error-Response
         HTTP/1.1 400 error
         {
@@ -102,16 +102,16 @@ const UserController = {
     postUser: (req, res) => {
         const {fullname, username, password} = req.body;
         if (!fullname)
-            return res.badRequest({Error: 'fullname is required'})
+        {return res.badRequest({Error: 'fullname is required'});}
         if (!username)
-            return res.badRequest({Error: 'username is required'})
+        {return res.badRequest({Error: 'username is required'});}
         if (!password)
-            return res.badRequest({Error: 'password is required'})
-        const index = sails.config.custom.users.findIndex(value => value.username === username)
+        {return res.badRequest({Error: 'password is required'});}
+        const index = sails.config.custom.users.findIndex(value => value.username === username);
         if (index === -1)
-            sails.config.custom.users.push({fullname, username, password})
+        {sails.config.custom.users.push({fullname, username, password});}
         else {
-            return res.badRequest({Error: 'username already exist'})
+            return res.badRequest({Error: 'username already exist'});
         }
         return res.ok({fullname, username});
     },
@@ -164,13 +164,13 @@ const UserController = {
         const {username, password} = req.body;
         const user = sails.config.custom.users.find(value => value.username === username);
         if (!username)
-            return res.badRequest({Error: 'username is required'})
+        {return res.badRequest({Error: 'username is required'});}
         if (!password)
-            return res.badRequest({Error: 'password is required'})
+        {return res.badRequest({Error: 'password is required'});}
         if  (!user)
-            return res.json({code: 201, message: 'Username is not match with any account', data: null})
+        {return res.json({code: 201, message: 'Username is not match with any account', data: null});}
         if (user.password === password)
-            return res.ok({code: 200, message: 'ok', data: {fullname: user.fullname, username}})
+        {return res.ok({code: 200, message: 'ok', data: {fullname: user.fullname, username}});}
         return res.json({code: 201, message: 'Password is incorrect', data: null});
     },
     /**
@@ -209,14 +209,16 @@ const UserController = {
      */
     deleteUser: (req, res) => {
         const {username} = req.body;
-        if (!username)
-            return res.badRequest({Error: 'username is required'})
+        if (!username) {
+            return res.badRequest({Error: 'username is required'});
+        }
         const index = sails.config.custom.users.findIndex(value => value.username === username);
-        if (index === -1)
-        return res.json({code: 201, message: 'Username is not match with any account'});
+        if (index === -1) {
+            return res.json({code: 201, message: 'Username is not match with any account'});
+        }
         sails.config.custom.users.splice(index, 1);
         return res.ok({code: 200, message: `User ${username} was deleted`});
     }
-}
+};
 
 module.exports = UserController;

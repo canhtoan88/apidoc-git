@@ -5,43 +5,43 @@ module.exports = {
      * @apiName GetAPI
      * @apiGroup API
      * @apiPermission api
-     * 
-     * @apiDescription 
+     *
+     * @apiDescription
      * API description - This is description for API and Git
-     * 
+     *
      * Use apidoc to generate the API document, using default template
-     * 
+     *
      * And use git to remote respository on Github
-     * 
+     *
      * @apiHeader {String} token Token is required
      * @apiHeader {Number} apiTotal Number of apis
-     * 
-     * @apiHeaderExample {json} Header-Example: 
+     *
+     * @apiHeaderExample {json} Header-Example:
      *     {
      *         "token": "flkdjsfkasjfeoiwafjos",
      *         "apitotal": 2
      *     }
-     * 
+     *
      * @apiParam {String} param API param
-     * 
+     *
      * @apiParamExample {json} Param-Example:
      *     {
      *         "param": "The param is not neccessary"
      *     }
-     * 
+     *
      * @apiExample {js} Example usage:
      *      Access http://localhost:1337/api.
-     * 
+     *
      * @apiSuccess {String} result Result is a string
-     * 
+     *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {
      *         result: 'Get API'
      *     }
-     * 
+     *
      * @apiError APINotFound The api url not found
-     * 
+     *
      * @apiErrorExample Error-Response:
      *     HTTP/1.1 404 Not Found
      *     {
@@ -52,42 +52,42 @@ module.exports = {
         return res.ok('Get API');
     },
     /**
-     * @api {post} /api 02. Post API
-     * @apiVersion 1.0.1
-     * @apiName PostAPI
-     * @apiGroup API
-     * 
-     * @apiHeader {String} token Token is required
-     * 
-     * @apiSuccess {String} result Result is a String
-     * 
-     * @apiSuccessExample Response-Success:
-     *     {
-     *         result: 'This is a result'
-     *     }
-     */
+    @api {post} /api 02. Post API
+    @apiVersion 1.0.1
+    @apiName PostAPI
+    @apiGroup API
 
-     /**
-     * @apiIgnore Not finished Method
-     * @api {post} /api 02. Post API
-     * @apiVersion 1.0.1
-     * @apiName PostAPI
-     * @apiGroup API
-     * 
-     * @apiHeader {String} token Token is required
-     * 
-     * @apiSuccess {String} result Result is a String
-     * 
-     * @apiSuccessExample Response-Success:
-     *     {
-     *         result: 'This is a result'
-     *     }
+    @apiHeader {String} token Token is required
+
+    @apiSuccess {String} result Result is a String
+
+    @apiSuccessExample Response-Success:
+        {
+            result: 'This is a result'
+        }
+    */
+
+    /**
+    @apiIgnore Not finished Method
+    @api {post} /api 02. Post API
+    @apiVersion 1.0.1
+    @apiName PostAPI
+    @apiGroup API
+
+    @apiHeader {String} token Token is required
+
+    @apiSuccess {String} result Result is a String
+
+    @apiSuccessExample Response-Success:
+        {
+            result: 'This is a result'
+        }
      */
     postAPI: (req, res) => {
         const params = req.allParams();
         return res.ok({Page: 'Post API', ...params});
     },
-    /** 
+    /**
         @api {put} /api 03. Put API
         @apiVersion 1.0.1
         @apiName PutAPI
@@ -159,4 +159,4 @@ module.exports = {
     deleteAPI: (req, res) => {
         return res.ok('Delete API');
     }
-}
+};

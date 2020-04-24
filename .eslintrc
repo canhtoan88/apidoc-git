@@ -27,7 +27,10 @@
   },
 
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
   },
 
   "globals": {
@@ -36,7 +39,8 @@
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     "Promise": true,
     "sails": true,
-    "_": true
+    "_": true,
+    "async": true
     // …and any others (e.g. `"Organization": true`)
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   },
@@ -50,7 +54,7 @@
     "eqeqeq":                       ["error", "always"],
     "eol-last":                     ["warn"],
     "handle-callback-err":          ["error"],
-    "indent":                       ["warn", 2, {
+    "indent":                       ["warn", 4, {
       "SwitchCase": 1,
       "MemberExpression": "off",
       "FunctionDeclaration": {"body":1, "parameters":"off"},
@@ -60,7 +64,6 @@
       "ObjectExpression": 1,
       "ignoredNodes": ["ConditionalExpression"]
     }],
-    "linebreak-style":              ["error", "unix"],
     "no-dupe-keys":                 ["error"],
     "no-duplicate-case":            ["error"],
     "no-extra-semi":                ["warn"],

@@ -18,10 +18,10 @@
     "eslint": "5.16.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
+    "start": "npm run test && NODE_ENV=production nodemon app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "apidoc": "apidoc -i api/controllers -o assets/doc",
-    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "lint": "eslint . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
   },
   "main": "app.js",
