@@ -101,7 +101,14 @@ git commit --amend --no-edit
     * Pushed: 
     ```javascript
     git revert <commit_hash>
+    or
+    git revert HEAD~
     ```
++ **Unpush** :point_right: after commited, when no anyone had pulled from current branch
+```javascript
+git reset --hard HEAD~
+git push --force
+```
 + **Unpull** :point_right: common for conflict case
 ```javascript
 git reset --hard ORIG_HEAD
@@ -232,7 +239,7 @@ git checkout master
 ## VIII. Stashing
 1. __Stash__ :point_right: save changed in working directory at current branch
 ```javascript
-git stash
+git stash - Save to the last stash (0)
 ```
 2. __Get stash list__
 ```javascript
