@@ -32,6 +32,7 @@ git config --global alias.key value (or 'value')
 ```javascript
 + Ignore: .gitignore
 + Unmodified: **git restore <file>**
++ Viewing staged: **git diff [--name-only] --cached** - --name-only was used: only show filename in staged
 + Unstaged: **git restore --staged <file>**
 ```
 
