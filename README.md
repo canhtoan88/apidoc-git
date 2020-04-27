@@ -98,15 +98,25 @@ git commit --amend --no-edit
     * Not pushed yet:
         - Hard :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and remove changed in working directory (local).
         ```javascript
+        // Remove n commit, unstaged the changed files before committed and unmodified both current and before commit
+        // --> Come back n before commited: no new changed
         git reset --hard HEAD~n -> n can a number or nothing (default is 1)
         ```
         - Mixed :point_right: come back n commit before, move HEAD to n commit before, move index to n added before and don't remove changed in working directory (local).
         ```javascript
+        // Remove n commit, unstaged the changed files before committed, unmodified before commit and don't unmodified current(keep the current change after reset --mixed)
         git reset --mixed HEAD~n -> n can a number or nothing (default is 1)
         ```
         - Soft :point_right: come back n commit before, move HEAD to n commit before and don't remove changed in working directory (local).
         ```javascript
+        // Remove n commit, don't unstaged the changed files before committed, unmodified before commit and don't unmodified current (keep the current change after reset --soft)
         git reset --soft HEAD~n -> n can a number or nothing (default is 1)
+        ```
+        - **Repush after uncommited**
+        ```javascript
+        // Come back n before commited: remove changed of n that commited
+        // Repush new commit
+        git push -f/--force
         ```
     * Pushed: 
     ```javascript
