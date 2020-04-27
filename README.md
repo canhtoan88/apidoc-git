@@ -241,6 +241,10 @@ git checkout master
 ```javascript
 git stash - Save to the last stash (0)
 ```
+or save with a message:
+```javascript
+git stash save <message> - Don't need use '' or "" for the message
+```
 2. __Get stash list__
 ```javascript
 git stash list
