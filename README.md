@@ -70,9 +70,19 @@ git checkout -- <file>
 ```javascript
 git reset HEAD <file>
 ```
++ **Change the author information**
+```javascript
+git config --global user.name "new name"
+git config --global user.email "new email"
+git commit --amend --reset-author
+```
 + **Addtitional added file after commited and before pushed** :point_right: merge multiple staging into one commit
 ```javascript
+// Open the default editor
 git commit --amend
+or:
+// Write a new message in one line
+git commit --amend -m "new commit message"
 ```
 - *Change commit message* :arrow_right: change message then write (:w) and quit (:q)
 ```javascript
@@ -100,14 +110,18 @@ git commit --amend --no-edit
         ```
     * Pushed: 
     ```javascript
-    git revert <commit_hash>
-    or
+    // Create a new commit, which same to commit be choose to revert
+    git revert <commit_hash> - git revert only using on dev branch
+    or // HEAD~n
     git revert HEAD~
     ```
 + **Unpush** :point_right: after commited, when no anyone had pulled from current branch
 ```javascript
-git reset --hard HEAD~
+// Move HEAD to n commit before or commit be choosen
+git reset --hard HEAD~ or git reset --hard <commit_id>
+// repush after unpush and comitted
 git push --force
+// All commit after the commit be choosen to unpush was be deleted (different with revert)
 ```
 + **Unpull** :point_right: common for conflict case
 ```javascript
