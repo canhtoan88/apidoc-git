@@ -93,10 +93,7 @@ git commit --amend
 ```javascript
 git commit --amend --no-edit
 ```
-* **If commit was pushed, after used --amend option, to don't must merged when repush, don't should pull, just push immediate with -f option**
-```javascript
-git push -f/--force - use after commit --amend
-```
+
 ## V. Committed
 + **Uncommited**:
     * Not pushed yet:

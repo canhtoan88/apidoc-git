@@ -1,3 +1,5 @@
+const UserService = require('../../services/User/UserService');
+
 const UserController = {
     /**
         @api {get} /user 01. Get users
@@ -43,14 +45,19 @@ const UserController = {
             "Error": "Internal Server Error"
         }
      */
-    getUsers: (req, res) => {
+    getListUsers: async (req, res) => {
         const token = req.headers.token;
-        if (!token)
-        {return res.badRequest({Error: 'token is required'});}
+        if (!token) {
+            return res.badRequest({Error: 'token is required'});
+        }
+        // With server
+        // sails.config.custom.users.map(value => {return {fullname: value.fullname, username: value.username};})
+        const users = await User.find();
         return res.ok({
             code: 200,
             message: 'ok',
-            data: sails.config.custom.users.map(value => {return {fullname: value.fullname, username: value.username};})
+            total: users.length,
+            data: users
         });
     },
     /**
@@ -99,21 +106,20 @@ const UserController = {
             "Error": "password is required"
         }
      */
-    postUser: (req, res) => {
+    createUser: async (req, res) => {
         const {fullname, username, password} = req.body;
-        if (!fullname)
-        {return res.badRequest({Error: 'fullname is required'});}
-        if (!username)
-        {return res.badRequest({Error: 'username is required'});}
-        if (!password)
-        {return res.badRequest({Error: 'password is required'});}
-        const index = sails.config.custom.users.findIndex(value => value.username === username);
-        if (index === -1)
-        {sails.config.custom.users.push({fullname, username, password});}
-        else {
-            return res.badRequest({Error: 'username already exist'});
+        if (!fullname) {
+            return res.badRequest({Error: 'fullname is required'});
         }
-        return res.ok({fullname, username});
+        if (!username) {
+            return res.badRequest({Error: 'username is required'});
+        }
+        if (!password) {
+            return res.badRequest({Error: 'password is required'});
+        }
+
+        const result = await UserService.createUser({fullname, username, password});
+        return res.ok(result);
     },
     /**
         @api {put} /user 03. Put user
@@ -160,18 +166,16 @@ const UserController = {
             "data", null
         }
      */
-    putUser: (req, res) => {
+    login: async (req, res) => {
         const {username, password} = req.body;
-        const user = sails.config.custom.users.find(value => value.username === username);
-        if (!username)
-        {return res.badRequest({Error: 'username is required'});}
-        if (!password)
-        {return res.badRequest({Error: 'password is required'});}
-        if  (!user)
-        {return res.json({code: 201, message: 'Username is not match with any account', data: null});}
-        if (user.password === password)
-        {return res.ok({code: 200, message: 'ok', data: {fullname: user.fullname, username}});}
-        return res.json({code: 201, message: 'Password is incorrect', data: null});
+        if (!username) {
+            return res.badRequest({Error: 'username is required'});
+        }
+        if (!password) {
+            return res.badRequest({Error: 'password is required'});
+        }
+        const result = await UserService.login({username, password});
+        res.ok(result);
     },
     /**
         @api {delete} /user 04. Delete user
@@ -182,17 +186,21 @@ const UserController = {
 
         @apiHeader {String} token Token is required
 
-        @apiParam {String} username username is required
+        @apiParam {Array} id id is an array. Required if no username
+        @apiParam {Array} username username is an array. Required if no id
+
         @apiParamExample {json} Param-Example
         {
-            "username": "canhtoan88"
+            "username": ["canhtoan88"],
+            "id": ["5ea7f268864a0a14a027cc21"]
         }
 
         @apiSuccessExample Succes-Response
         HTTP/1.1 200 ok
         {
             "code": 200,
-            "message" "User canhtoan88 was deleted"
+            "message": "Deleted 2 account(s)",
+            "data": ['canhtoan12', 'canhtoan21']
         }
 
         @apiErrorExample Error-Response
@@ -207,17 +215,25 @@ const UserController = {
             "message": "username is not match with any account"
         }
      */
-    deleteUser: (req, res) => {
-        const {username} = req.body;
-        if (!username) {
-            return res.badRequest({Error: 'username is required'});
+    deleteUser: async (req, res) => {
+        const params = req.allParams();
+        //params.id = params.id ? Array.from(params.id) : null;
+        params.id = params.id ? params.id.replace('[', '').replace(']', '').replace(/ /g, '').split(',') : null;
+        params.username = params.username ? params.username.replace('[', '').replace(']', '').replace(/ /g, '').split(',') : null;
+        if (!params.username && !params.id) {
+            return res.badRequest({Error: 'id or username is required'});
         }
-        const index = sails.config.custom.users.findIndex(value => value.username === username);
-        if (index === -1) {
-            return res.json({code: 201, message: 'Username is not match with any account'});
+        if ((params.username && !Array.isArray(params.username)) || (params.id && !Array.isArray(params.id))) {
+            return res.badRequest({Error: 'id and username is must an array'});
         }
-        sails.config.custom.users.splice(index, 1);
-        return res.ok({code: 200, message: `User ${username} was deleted`});
+        // const index = sails.config.custom.users.findIndex(value => value.username === username);
+        // if (index === -1) {
+        //     return res.json({code: 201, message: 'Username is not match with any account'});
+        // }
+        // sails.config.custom.users.splice(index, 1);
+
+        const result = await UserService.removeUser(params);
+        return res.ok(result);
     }
 };
 

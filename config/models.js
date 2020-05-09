@@ -16,7 +16,7 @@
 module.exports.models = {
 
 
-  /***************************************************************************
+    /***************************************************************************
   *                                                                          *
   * Whether model methods like `.create()` and `.update()` should ignore     *
   * (and refuse to persist) unrecognized data-- i.e. properties other than   *
@@ -35,10 +35,10 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // schema: true,
+    // schema: true,
 
 
-  /***************************************************************************
+    /***************************************************************************
   *                                                                          *
   * How and whether Sails will attempt to automatically rebuild the          *
   * tables/collections/etc. in your schema.                                  *
@@ -53,10 +53,10 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // migrate: 'alter',
+    // migrate: 'alter',
 
 
-  /***************************************************************************
+    /***************************************************************************
   *                                                                          *
   * Base attributes that are included in all of your models by default.      *
   * By convention, this is your primary key attribute (`id`), as well as two *
@@ -68,25 +68,25 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  attributes: {
-    createdAt: { type: 'number', autoCreatedAt: true, },
-    updatedAt: { type: 'number', autoUpdatedAt: true, },
-    id: { type: 'number', autoIncrement: true, },
-    //--------------------------------------------------------------------------
-    //  /\   Using MongoDB?
-    //  ||   Replace `id` above with this instead:
-    //
-    // ```
-    // id: { type: 'string', columnName: '_id' },
+    attributes: {
+        createdAt: { type: 'number', autoCreatedAt: true, },
+        updatedAt: { type: 'number', autoUpdatedAt: true, },
+        // id: { type: 'number', autoIncrement: true, },
+        //--------------------------------------------------------------------------
+        //  /\   Using MongoDB?
+        //  ||   Replace `id` above with this instead:
+        //
+        // ```
+        id: { type: 'string', columnName: '_id' },
     // ```
     //
     // Plus, don't forget to configure MongoDB as your default datastore:
     // https://sailsjs.com/docs/tutorials/using-mongo-db
     //--------------------------------------------------------------------------
-  },
+    },
 
 
-  /******************************************************************************
+    /******************************************************************************
   *                                                                             *
   * The set of DEKs (data encryption keys) for at-rest encryption.              *
   * i.e. when encrypting/decrypting data for attributes with `encrypt: true`.   *
@@ -100,12 +100,12 @@ module.exports.models = {
   *                                                                             *
   ******************************************************************************/
 
-  dataEncryptionKeys: {
-    default: 'm66AJmCm50fi0GA5o/bTHXFCwK/DMzazTNXw2c4SZRM='
-  },
+    dataEncryptionKeys: {
+        default: 'm66AJmCm50fi0GA5o/bTHXFCwK/DMzazTNXw2c4SZRM='
+    },
 
 
-  /***************************************************************************
+    /***************************************************************************
   *                                                                          *
   * Whether or not implicit records for associations should be cleaned up    *
   * automatically using the built-in polyfill.  This is especially useful    *
@@ -118,7 +118,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  cascadeOnDestroy: true
+    cascadeOnDestroy: true
 
 
 };

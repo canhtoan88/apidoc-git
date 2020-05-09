@@ -8,22 +8,30 @@
     "@sailshq/connect-redis": "^3.2.1",
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
+    "bcryptjs": "^2.4.3",
     "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "grunt": "1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
     "sails": "^1.2.4",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
-    "sails-hook-sockets": "^2.0.0"
+    "sails-hook-sockets": "^2.0.0",
+    "sails-mongo": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "chai": "^4.2.0",
+    "eslint": "5.16.0",
+    "mocha": "^7.1.2"
   },
   "scripts": {
-    "start": "npm run test && cross-env NODE_ENV=development nodemon app.js",
+    "start": "npm run test && npm run start-local",
+    "start-local": "cross-env NODE_ENV=development nodemon app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "apidoc": "apidoc -i api/controllers -o assets/doc",
     "lint": "eslint api/controllers --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
-    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+    "custom-tests": "mocha"
   },
   "main": "app.js",
   "repository": {
