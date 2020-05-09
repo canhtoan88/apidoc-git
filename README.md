@@ -401,5 +401,3 @@ This is a quote
     - [ ] not ticked
 
 # apidoc-git
-
-### BranchA write here.
