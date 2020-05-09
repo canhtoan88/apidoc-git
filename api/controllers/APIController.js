@@ -48,8 +48,8 @@ module.exports = {
      *         error: 'APINotFound'
      *     }
      */
-    getAPI: (req, res) => {
-        return res.ok('Get API');
+    getAPI: async (req, res) => {
+        return res.ok({result: await sails.helpers.apihelper.get()});
     },
     /**
     @api {post} /api 02. Post API
@@ -121,8 +121,8 @@ module.exports = {
             isMatch: false
         }
      */
-    putAPI: (req, res) => {
-        return res.ok('Put API');
+    putAPI: async (req, res) => {
+        return res.ok(await sails.helpers.apihelper.put(req.body));
     },
     /**
         @api {delete} /api 04. Delete API
