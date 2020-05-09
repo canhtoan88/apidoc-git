@@ -15,7 +15,11 @@ git config --global core.editor="link-to-editor"
 ```
 + _Set alias_
 ```javascript
-git config --global alias.key value (or 'value')
+git config --global alias.<key> value (or 'value')
+```
++ _Unset alias_
+```javascript
+git config --global --unset alias.<key>
 ```
 ### user:
 
@@ -125,7 +129,12 @@ git commit --amend --no-edit
     git revert <commit_hash> - git revert only using on dev branch
     or // HEAD~n
     git revert HEAD~
+	
+	// To un-revert (reverting)
+	git reset --hard HEAD~
     ```
++ **Remove middle commit**
+
 + **Unpush** :point_right: after commited, when no anyone had pulled from current branch
 ```javascript
 // Move HEAD to n commit before or commit be choosen
