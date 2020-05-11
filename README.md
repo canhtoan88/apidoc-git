@@ -133,8 +133,10 @@ git commit --amend --no-edit
 	// To un-revert (reverting)
 	git reset --hard HEAD~
     ```
-+ **Remove middle commit**
-
++ **Convert a commit to other branch**
+```javascript
+git cherry-pick <commit_id>
+```
 + **Unpush** :point_right: after commited, when no anyone had pulled from current branch
 ```javascript
 // Move HEAD to n commit before or commit be choosen
