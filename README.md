@@ -137,6 +137,17 @@ git commit --amend --no-edit
 ```javascript
 git cherry-pick <commit_id>
 ```
++ **Remove middle commit**
+	* _Use reset (not recommand because easy conflict)_
+	```javascript
+	git reset --hard <middle_commit_id>
+	// Re-merge here
+	```
+	* _Use revert_
+	```javascript
+	git revert <middle_commit_id>
+	// possible conflict here
+	```
 + **Unpush** :point_right: after commited, when no anyone had pulled from current branch
 ```javascript
 // Move HEAD to n commit before or commit be choosen
