@@ -17,6 +17,22 @@ git config --global core.editor="link-to-editor"
 ```javascript
 git config --global alias.<key> value (or 'value')
 ```
+*Example*
+```javascript
+git config --global alias.a 'add'
+git config --global alias.st 'status'
+git config --global alias.cm 'commit -m'
+git config --global alias.cma 'commit -amend'
+git config --global alias.cman 'commit --amend --no-edit'
+git config --global alias.cmam 'commit -am'
+git config --global alias.pu 'commit pull'
+git config --global alias.p 'commit push'
+git config --global alias.b 'branch'
+git config --global alias.co 'checkout'
+git config --global alias.m 'merge'
+git config --global alias.lo 'log --oneline'
+git config --global alias.lpo 'log --pretty=oneline'
+```
 + _Unset alias_
 ```javascript
 git config --global --unset alias.<key>
