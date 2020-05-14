@@ -37,6 +37,11 @@ git config --global alias.lpo 'log --pretty=oneline'
 ```javascript
 git config --global --unset alias.<key>
 ```
+
++ _Edit_
+```javascript
+git config --global --edit
+```
 ### user:
 
 ## II. States: Untracked (1) - Umodified (2) - Modified (3) - Staged (4)
