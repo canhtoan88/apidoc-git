@@ -32,12 +32,14 @@ git config --global --unset alias.<key>
 + (4)-> commit -> (2)
 ```
 
-## III. Ignore - Unstaged - Unmodified
+## III. Ignore - Ignore modified - Unstaged - Unmodified
 ```javascript
 + Ignore: .gitignore
-+ Unmodified: **git restore <file>**
-+ Viewing staged: **git diff [--name-only] --cached** - --name-only was used: only show filename in staged
-+ Unstaged: **git restore --staged <file>**
++ Ignore modified: git update-index --assume-unchanged <fileName>
++ Unignore modified: git update-index --no-assume-unchanged <fileName>
++ Unmodified: git restore <file>
++ Viewing staged: git diff [--name-only] --cached - --name-only was used: only show filename in staged
++ Unstaged: git restore --staged <file>
 ```
 
 ## Log
