@@ -4,18 +4,22 @@
 
 ## I. Config: global - user
 ### global:
-+ _Set user profile_:
++ *Set user profile*:
 ```javascript
 git config --global user.name "name"
 git config --global user.email "email"
 ```
-+ _Set default editor_: 
++ *Set default editor*: 
 ```javascript
 git config --global core.editor="link-to-editor"
 ```
-+ _Set alias_
++ *Set alias*
 ```javascript
 git config --global alias.<key> value (or 'value')
+```
++ *Set EOL Git*: avoid ***git status*** showing all your files as **modified**
+```javascript
+git config --global core.autocrlf true
 ```
 *Example*
 ```javascript
