@@ -12,7 +12,8 @@ const auth = (req) => {
     if (!data || !data.id) {
         return null;
     }
-
+    const data2 = data;
+    console.log(data2);
     return data;
 };
 
