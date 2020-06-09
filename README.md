@@ -21,6 +21,14 @@ git config --global alias.<key> value (or 'value')
 ```javascript
 git config --global core.autocrlf true
 ```
++ *Set whitespace*: ^M character on windows
+```javascript
+git config core.whitespace cr-at-eol
+```
++ *Remove core settings*
+```javascript
+git config --global -e
+```
 *Example*
 ```javascript
 git config --global alias.a 'add'
@@ -175,6 +183,10 @@ git cherry-pick <commit_id>
 	git revert <middle_commit_id>
 	// possible conflict here
 	```
++ **Remove ahead commit**
+```javascript
+git reset --hard origin/<branchName>
+```
 + **Unpush** :point_right: after commited, when no anyone had pulled from current branch
 ```javascript
 // Move HEAD to n commit before or commit be choosen
@@ -361,6 +373,7 @@ git stash clear
 ### :point_right: Remove untracked file
 ```javascript
 git clean -f
+git clean -df -> remove whole directories
 ```
 
 ## X. Tagging
