@@ -34,7 +34,7 @@ git config --global -e
 git config --global alias.a 'add'
 git config --global alias.st 'status'
 git config --global alias.cm 'commit -m'
-git config --global alias.cma 'commit -amend'
+git config --global alias.cma 'commit --amend'
 git config --global alias.cman 'commit --amend --no-edit'
 git config --global alias.cmam 'commit -am'
 git config --global alias.pu 'pull'
@@ -44,6 +44,10 @@ git config --global alias.co 'checkout'
 git config --global alias.m 'merge'
 git config --global alias.lo 'log --oneline'
 git config --global alias.lpo 'log --pretty=oneline'
+git config --global alias.rss 'reset --soft'
+git config --global alias.rsm 'reset --mixed'
+git config --global alias.rsh 'reset --hard'
+git config --global alias.rspu 'reset --hard ORIG_HEAD'
 ```
 + _Unset alias_
 ```javascript
