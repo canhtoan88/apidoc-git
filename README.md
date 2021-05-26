@@ -325,6 +325,17 @@ git add .
 git rebase --continue
 git checkout master
 ```
+10. **View parent branch**
+```javascript
+git log --graph --decorate --simplify-by-decoration --oneline
+
+git log --decorate --simplify-by-decoration --oneline \
+| grep -v "(HEAD" \
+| head -n1 \
+| sed 's/. (\(.*\)) ./\1/' \
+| sed 's/\(.*\), .*/\1/' \
+| sed 's/origin\///'
+```
 
 ## VIII. Stashing
 1. __Stash__ :point_right: save changed in working directory at current branch
